@@ -1,0 +1,99 @@
+/* General styles */
+
+
+/* ---------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100%;
+}
+
+.clear {
+    clear: both;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+}
+
+
+/* Accordion styles */
+
+
+/* ---------------------------------------------------- */
+
+.accordion {
+    margin-top: 100px;
+}
+
+details {
+    background-color: rgb(233, 232, 232);
+    padding: 0 15px;
+    border: 1px solid gray;
+    margin: 15px 0;
+    font-size: 1.5rem;
+}
+
+details>summary {
+    list-style: none;
+    padding: 15px 0;
+    position: relative;
+}
+
+details>summary::-webkit-details-marker {
+    display: none;
+}
+
+details>summary::before,
+details>summary::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    background-color: red;
+    transform: translateY(-50%);
+}
+
+details>summary::before {
+    right: 5px;
+    height: 12px;
+    width: 2px;
+    transition: all .5s;
+    transform-origin: 1px 0px;
+}
+
+details>summary::after {
+    right: 0;
+    height: 2px;
+    width: 12px;
+}
+
+details>p {
+    padding: 0 0 15px 0;
+    line-height: 1.6;
+    font-size: 1.2rem;
+}
+
+details[open] {
+    background-color: white;
+}
+
+details[open]>summary {
+    color: red;
+}
+
+details[open]>summary::before {
+    transform: rotate(90deg);
+    right: -1px;
+}
+
+@media screen and (max-width:700px) {
+    .container {
+        width: 80%;
+    }
+}
